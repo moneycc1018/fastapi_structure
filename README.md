@@ -3,11 +3,13 @@
 
 ![project_tree](images/project_tree.png)
 
-* api: 存放所有與API有關的檔案
-    * endpoints: 存放設定API router的檔案
-        * products.py: 設定有關product的API router
-        * users.py: 設定有關user的API router
+* api: 存放所有與API相關的檔案
+    * endpoints: 存放設定API router的相關檔案
+        * products: 存放有關product的API router及其相關檔案
+        * users: 存放有關user的API router及其相關檔案
     * api.py: 整合所有API router
+* database: 存放與資料庫相關的檔案
+    * db.py: 設定資料庫
 * models: 存放所有pydantic model
     * products.py: 設定有關product的model(取名與endpoints內檔案一致)
     * users.py: 設定有關user的model(取名與endpoints內檔案一致)

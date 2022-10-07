@@ -1,6 +1,7 @@
 from fastapi import APIRouter
 
-from api.endpoints import users, products
+from api.endpoints.products import products
+from api.endpoints.users import users
 
 api_router = APIRouter()
 api_router.include_router(users.router, prefix="/users", tags=["users"])
