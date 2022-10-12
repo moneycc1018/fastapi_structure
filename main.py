@@ -2,13 +2,12 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from api.api import api_router
+import config
 
-app = FastAPI(title="FastAPI Structure", description="FastAPI公版架構")
-
-origins = ["http://0.0.0.0:3333"]
+app = FastAPI(title=config.APP_TITLE, description=config.APP_DESCRIPION)
 
 app.add_middleware(CORSMiddleware,
-                   allow_origins=origins,
+                   allow_origins=config.ALLOW_ORIGINS,
                    allow_credentials=True,
                    allow_methods=["*"],
                    allow_headers=["*"])

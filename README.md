@@ -16,9 +16,17 @@
 * tests: 存放所有測試檔案
     * test_products.py: 測試products.py
     * test_users.py: 測試users.py
+* config.py: 主要為變數設定(如抓取環境變數等)
 * main.py: 整個project的設定(如CORS等)
 
+## Run
+```
+docker build -t fastapi_structure .
+docker run -d --name fastapi_structure -p 9527:80 fastapi_structure
+```
+
 ## Interactive API docs
+[http://0.0.0.0:9527/docs](http://0.0.0.0:9527/docs)
 ![api_docs](images/api_docs.png)
 
 ## Reference
