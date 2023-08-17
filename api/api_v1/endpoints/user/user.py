@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from models.users import userProfile, userProfileResponse
+from schemas.user import userProfile, userProfileResponse
 import config
 
 router = APIRouter()

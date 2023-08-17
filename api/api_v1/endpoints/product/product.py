@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
 
-from models.products import productDetail
+from schemas.product import productDetail
 
 router = APIRouter()
 

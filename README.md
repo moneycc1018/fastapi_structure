@@ -1,23 +1,59 @@
 # FastAPI Structure
-此Repo提供一個開發FastAPI的基礎公版。
+此 Repo 提供一個開發 FastAPI 的樣板，僅供參考。
 
-![project_tree](images/project_tree.png)
+```
+.
+├── api
+│   ├── api_v1
+│   │   ├── endpoints
+│   │   │   ├── product
+│   │   │   │   └── product.py
+│   │   │   └── user
+│   │   │       └── user.py
+│   │   └── api.py
+│   └── deps.py
+├── db
+│   └── database.py
+├── models
+│   ├── product.py
+│   └── user.py
+├── schemas
+│   ├── product.py
+│   └── user.py
+├── tests
+│   └── v1
+│       ├── test_product.py
+│       └── test_user.py
+├── Dockerfile
+├── README.md
+├── config.py
+├── main.py
+└── requirements.txt
+```
 
-* api: 存放所有與API相關的檔案
-    * endpoints: 存放設定API router的相關檔案
-        * products: 存放有關product的API router及其相關檔案
-        * users: 存放有關user的API router及其相關檔案
-    * api.py: 整合所有API router
-* database: 存放與資料庫相關的檔案
-    * db.py: 設定資料庫
-* models: 存放所有pydantic model
-    * products.py: 設定有關product的model(取名與endpoints內檔案一致)
-    * users.py: 設定有關user的model(取名與endpoints內檔案一致)
-* tests: 存放所有測試檔案
-    * test_products.py: 測試products.py
-    * test_users.py: 測試users.py
-* config.py: 主要為變數設定(如抓取環境變數等)
-* main.py: 整個project的設定(如CORS等)
+ * api
+    * api_v1
+        * endpoints
+            * product
+                * product.py：有關 product 的 API router
+            * user
+                * user.py：有關 user 的 API router
+        * api.py：整合 v1 所有的 API router
+    * deps.py：依賴項
+* db
+    * database.py：資料庫設定
+* models
+    * product.py：資料庫中 product 表格的對應欄位設定
+    * user.py：資料庫中 user 表格的對應欄位設定
+* schemas
+    * product.py：有關 product 的 pydantic model
+    * user.py：有關 user 的 pydantic model
+* tests
+    * v1
+        * test_product.py：product.py 測試檔
+        * test_user.py：user.py 測試檔
+* config.py：設定檔
+* main.py：整個 project 的設定 (如 CORS 等)
 
 ## Run
 ```
@@ -27,6 +63,7 @@ docker run -d --name fastapi_structure -p 9527:80 fastapi_structure
 
 ## Interactive API docs
 [http://0.0.0.0:9527/docs](http://0.0.0.0:9527/docs)
+
 ![api_docs](images/api_docs.png)
 
 ## Reference
