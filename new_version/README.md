@@ -52,7 +52,6 @@
 ## Run
 ### Local
 ```
-cd new_version
 pyenv exec python3 -m venv env
 source env/bin/activate
 pip3 install -r requirements.txt
@@ -66,8 +65,6 @@ docker run -d --name fastapi_structure -p 9527:80 fastapi_structure
 
 ## Interactive API docs
 [http://0.0.0.0:9527/docs](http://0.0.0.0:9527/docs)
-
-![api_docs](images/api_docs.png)
 
 ## Reference
 [tiangolo/full-stack-fastapi-template](https://github.com/tiangolo/full-stack-fastapi-template)
