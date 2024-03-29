@@ -11,7 +11,8 @@ def query_user(user_name):
 
     return result
 
-def create_user(user:CreateUserInput):
+
+def create_user(user: CreateUserInput):
     with Session.begin() as session:
         stmt = insert(UserModel).values(**user.dict()).returning(UserModel)
         result = session.scalars(stmt).one()
